@@ -1,0 +1,66 @@
+
+Algo EstEntier (e car: caractère )-> booléen
+variable: 
+DEBUT 
+	
+	si car div 2 == 0 faire
+		car = true
+	sinon 
+		car = false
+	fsi
+FIN
+Algo
+
+
+Algo RobotTraceur
+variable:
+dir				: caractère
+action 			: chaîne
+poX, poY		: entier
+numDirection	: entier
+dist			: entier
+DEBUT
+	lire (action)
+	poX <-- poY  <-- 100
+	dir <-- 'N'
+	numDirection <-- 1
+	écrire(dir, poX, poY)
+	
+	tq action ≠  "fin" faire
+				
+		si appel EstEntier(action) alors
+			dist <-- enEntier(action)
+			si dist >=0 alors
+				
+				selon dir
+					cas 'N' : poY <-- poY - dst
+					cas 'O' : poX <-- poX - dist
+					cas 'S' : poY <-- poY + dist
+					cas 'E' : poX <-- poX + dist
+				fselon			
+			fsi
+			si action ='G' alors
+				dir <-- appel Tourner ('D', dir)
+				dir <-- appel Tourner ('D', dir)
+				dir <-- appel Tourner ('D', dir)
+		fsi
+		écrire ('[' , dir, poX , poY, ']', "action", action)
+		lire action
+	ftq
+FIN
+
+
+Algo Tourner (e dir : caractère, e orient : caractère) -> caractère
+
+DEBUT
+
+	si dir = 'D' alors 
+		selon	orient
+			cas	'N' : orient <-- 'E'
+			cas	'O' : orient <-- 'N'
+			cas	'E' : orient <-- 'O'
+			cas	'S' : orient <-- 'S'
+		fselon
+	fsi
+	retourne orient
+FIN 
