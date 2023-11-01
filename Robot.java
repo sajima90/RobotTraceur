@@ -49,19 +49,19 @@ public class Robot
 		// On calcule les coordonnées des sommets du triangle grâce au angles
 		switch (dir)
 		{
-		case 'S':
-			angle = 90;
-			break;
-		case 'O':
-			angle = 180;
-			break;
-		case 'N':
-			angle = 270;
-			break;
-		case 'E':
-		default:
-			angle = 0;
-			break;
+			case 'S':
+				angle = 90;
+				break;
+			case 'O':
+				angle = 180;
+				break;
+			case 'N':
+				angle = 270;
+				break;
+			case 'E':
+			default:
+				angle = 0;
+				break;
 		}
 
 		angleRad = Math.toRadians(angle);

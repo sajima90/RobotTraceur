@@ -12,18 +12,36 @@ public class RobotTraceurCUI
 	public static void main(String[] args)
 	{
 
+		/*-----------------*/
+		/* Variables       */
+		/*-----------------*/
 
-		int poX = 100, poY = 100;
-		char dir = 'N';
+		int poX;
+		int poY;
+		int dist;
+		int rotations;
+		char dir;
+		
 
-		int dist = 0;
+		/*-----------------*/
+		/* Initialisation  */
+		/*-----------------*/
 
-		int rotations = 0;
+		poX       = 100;
+		poY       = 100;
+		dist      = 0;
+		rotations = 0;
+		dir       = 'N';
 
+
+		/*-----------------*/
+		/* Instructions    */
+		/*-----------------*/
 
 		while (true)
 		{
 			System.out.print("[" + dir + "   " + poX + ":" + poY + "] \t action : ");
+			//lire la saisie de l'utilisateur en majuscule ou en minuscule
 			String action = Clavier.lireString().toUpperCase();
 
 			if (action.equals("FIN"))
